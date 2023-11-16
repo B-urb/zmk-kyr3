@@ -74,7 +74,7 @@ bindings
 		mod_layer {
 			bindings = <
 	&trans   &kp RS(RG(Q))    &kp N2    &kp RG(E)  &kp RG(R)    &kp N5                           HY(N1)   HY(N2)    HY(3)   HY(4)    HY(5)   HY(6)
-	&trans    &kp RG(S) &kp none &kp RG(F)   &kp N5                                             HY(H)    HY(J)    HY(K)   HY(L)    &kp N0    &trans
+	&trans   &trans &kp RG(S) &trans &kp RG(F)   &kp N5                                          HY(H)    HY(J)    HY(K)   HY(L)    &kp N0    &trans
 	&trans    &trans    &trans    &trans    &kp EQUAL &trans    &trans    &trans      &trans    &trans    HY(LEFT)    HY(DOWN)    HY(UP)   HY(RIGHT) &trans  &trans  
 	                              &trans    &trans   &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans    
 			>;	
