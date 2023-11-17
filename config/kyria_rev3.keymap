@@ -34,21 +34,21 @@
             require-prior-idle-ms = <50>;
             bindings = <&kp>, <&kp>;
            };
-            td_hm_j: tap_dance_mod_tap {
+            td_hm_j: tap_dance_mod_tap_j {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MOD_TAP_J";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&hm RSFT J>, <&kp J>;
         };
-        td_hm_k: tap_dance_mod_tap {
+        td_hm_k: tap_dance_mod_tap_k {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MOD_TAP_K";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&hm RGUI K>, <&kp K>;
         };
-            td_hm_l: tap_dance_mod_tap {
+            td_hm_l: tap_dance_mod_tap_l {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MOD_TAP_L";
             #binding-cells = <0>;
