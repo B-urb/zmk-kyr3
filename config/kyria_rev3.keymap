@@ -52,7 +52,7 @@
             label = "TAP_DANCE_MOD_TAP_L";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&hm RALTL>, <&kp L>;
+            bindings = <&hm RALT L>, <&kp L>;
         };
            };
 macros {  
