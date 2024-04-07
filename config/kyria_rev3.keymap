@@ -1,10 +1,11 @@
 #define DEFAULT 0
-#define L_NUMS 1
-#define L_MOD 2
-#define L_TEXT 3
-#define L_CONTROL 4
-#define L_MOD_OLD 5
-#define L_IDE 6
+#define L_NUMS_LEFT 1
+#define L_NUMS_RIGHT 2
+#define L_MOD 3
+#define L_TEXT 4
+#define L_CONTROL 5
+#define L_MOD_OLD 6
+#define L_IDE 7
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -88,15 +89,24 @@ bindings
 		default_layer {
 			bindings = <
 	&kp TAB          &kp Q &kp W &kp E &kp R &kp T                                                   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-	&lt L_NUMS ESC &hm LCTL  A  &hm LALT S  &hm LGUI D &hm LSFT F &lt L_IDE G                     &lhm L_IDE H  &hm RSFT J &hm LGUI K &hm RALT L  &hm RCTL SEMI &lt L_NUMS SQT 
+	&lt L_NUMS_RIGHT ESC &hm LCTL  A  &hm LALT S  &hm LGUI D &hm LSFT F &lt L_IDE G                     &lt L_IDE H  &hm RSFT J &hm LGUI K &hm RALT L  &hm RCTL SEMI &lt L_NUMS_LEFT SQT 
 	&kp RSHFT       &kp Z &kp X &kp C &kp V &kp B   &kp DEL &kp BSPC						&mo L_TEXT     &kp  C_PLAY_PAUSE &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-	                 &mo L_CONTROL &out OUT_BLE &kp LCTRL &kp LGUI &lt L_NUMS SPACE                 &lt L_NUMS SPACE &lt L_MOD RET  &kp RCTRL &kp RALT &kp PSCRN
+	                 &mo L_CONTROL &out OUT_BLE &kp LCTRL &kp LGUI &lt L_NUMS_RIGHT SPACE                 &lt L_NUMS_LEFT SPACE &lt L_MOD RET  &kp RCTRL &kp RALT &kp PSCRN
 			>;
 		};
-		nums_layer {
+		nums_layer_left {
 			bindings = <
 	 &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT								&kp CARET &kp AMPS &kp STAR &kp MINUS &kp EQUAL &kp GRAVE
-	 &trans &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                              &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
+	 &trans &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                              &kp N6    &trans  &trans    &trans   &trans   &trans
+	    &trans &kp F1 &kp F2    &kp F3    &kp F4    &kp F5    &kp F6 &trans                               &trans &kp F7    &kp F8    &kp F9  &kp F10   &kp F11 &kp F12 &trans
+	                              &trans    &trans &trans  &trans    &trans                             &trans  &kp LBKT &kp RBKT   &kp LPAR    &kp RPAR     
+			>;
+		};
+
+		nums_layer_right {
+			bindings = <
+	 &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT								&kp CARET &kp AMPS &kp STAR &kp MINUS &kp EQUAL &kp GRAVE
+	 &trans &kp N1    &trans   &trans   &trans   &trans                                             &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
 	    &trans &kp F1 &kp F2    &kp F3    &kp F4    &kp F5    &kp F6 &trans                               &trans &kp F7    &kp F8    &kp F9  &kp F10   &kp F11 &kp F12 &trans
 	                              &trans    &trans &trans  &trans    &trans                             &trans  &kp LBKT &kp RBKT   &kp LPAR    &kp RPAR     
 			>;
@@ -137,11 +147,15 @@ bindings
 			};
 		ide_layer {
 			bindings = <
-	&trans   &trans   &kp RBKT  HY(N3)  &kp RBRC      &kp N5                                      &trans  &kp RBRC   &trans   &kp RBKT    &trans   &trans
-	&trans   &trans      &kp LEFT    &kp UP   &kp RIGHT  &trans                                   &trans    &kp LEFT    &kp UP   &kp RIGHT    &trans   &trans
+	&trans   &trans   &kp RBKT  &kp UP  &kp RBRC      &kp N5                                      &trans  &kp RBRC   &trans   &kp RBKT    &trans   &trans
+	&trans   &trans      &kp LEFT    &kp DOWN   &kp RIGHT  &trans                                    &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT    &trans   &trans
 	&trans    &trans    &kp LBKT   &kp DOWN  &kp LBRC    &trans    &trans      &trans    &trans  &trans &trans &kp LBRC     &kp DOWN  &kp LBKT &trans  &trans  
 	                              &trans    &trans   &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans    
 			>;	
 		};
 	};
 };
+
+
+
+
