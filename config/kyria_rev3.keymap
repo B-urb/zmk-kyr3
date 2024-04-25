@@ -48,7 +48,8 @@
            };
            };
 macros {  
-
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+#define HY(keycode) &kp LS(LG(LA(LC(keycode))))
 windowm: windowm {
             label = "windowm";
             compatible = "zmk,behavior-macro";
